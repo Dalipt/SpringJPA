@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.java.SpringDataJPA.Entity.Vaccine;
 import com.java.SpringDataJPA.Repostary.IVaccine;
-import com.java.SpringDataJPA.view.ResultView;
+import com.java.SpringDataJPA.view.View;
 @Service
 public class VaccineService implements IVaccineService 
 {
@@ -24,11 +24,13 @@ public class VaccineService implements IVaccineService
 	{
 		this.repo=repo;
 	}
+	
 	@Override
-	public List<ResultView> fetchByCost(Double cost) 
-	{
-		return repo.findByCostLessThan(cost);
+	public <T extends View> List<T> fetchByCostLessThan(Double cost, Class<T> cls) {
+		return repo.findByCostLessThan(cost, cls);
+		
 	}
+
 	
 
 }
