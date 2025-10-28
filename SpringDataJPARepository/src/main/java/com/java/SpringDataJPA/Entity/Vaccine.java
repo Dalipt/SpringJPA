@@ -69,7 +69,11 @@ public class Vaccine
 		// TODO Auto-generated constructor stub
 	}
 
-		@Override
+	public Vaccine(String string, String string2, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
 	public String toString() {
 		return "Vaccine [id=" + id + ", vaccineName=" + vaccineName + ", vaccineCompany=" + vaccineCompany + ", cost="
 				+ cost + "]";
